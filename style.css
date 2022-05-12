@@ -1,0 +1,173 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: rgb(20, 138, 241);
+}
+
+.container {
+  width: 100%;
+  height: calc(100vh - 60px);
+
+}
+
+.mem-wrapper {
+    margin: auto;
+    width: 60vw;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    width: 300vw;
+    height: 60vh;
+
+}
+
+/*.wrapper :nth-child(1) { order: 1; }
+.wrapper :nth-child(2) { order: 2; }
+.wrapper :nth-child(3) { order: 3; }
+.wrapper :nth-child(4) { order: 4; }
+.wrapper :nth-child(5) { order: 5; }*/
+
+.slide {
+    width: 60vw;
+    height: 60vh;
+    opacity: 0;
+}
+
+.slide1 {
+    background:sandybrown;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.slide2 {
+    background: antiquewhite;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.slide3 {
+    background: red;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.slide4 {
+    background:fuchsia;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.slide5 {
+    background: yellow;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.container > input {
+	display: inline-block;
+}
+
+.buttons {
+    margin: auto;
+}
+
+.buttons > label {
+    height: 2vh;
+    width: 2vw;
+    cursor: pointer;
+	display: inline-block;
+    border-radius: 50%;
+    background: rgb(22, 53, 194);
+    transition: background ease-in-out .5s;
+}
+
+.buttons label:hover, 
+#slide-1:checked ~ .buttons label:nth-of-type(1),
+#slide-2:checked ~ .buttons label:nth-of-type(2),
+#slide-3:checked ~ .buttons label:nth-of-type(3),
+#slide-4:checked ~ .buttons label:nth-of-type(4),
+#slide-5:checked ~ .buttons label:nth-of-type(5) {
+	background: #ddd;
+}
+
+@keyframes slide {
+    from {
+        margin-left: 0;
+    } 
+    to {
+        margin-left: -60vw;
+    }
+}
+
+@keyframes slide2 {
+    from {
+        margin-left: -60vw;
+    } 
+    to {
+        margin-left: -120vw;
+    }
+}
+
+@keyframes slide3 {
+    from {
+        margin-left: -120vw;
+    } 
+    to {
+        margin-left: -180vw;
+    }
+}
+
+@keyframes slide4 {
+    from {
+        margin-left: -180vw;
+    } 
+    to {
+        margin-left: -240vw;
+    }
+}
+
+@keyframes slide5 {
+    from {
+        margin-left: 60vw;
+    } 
+    to {
+        margin-left: 0;
+    }
+}
+#slide1:checked ~ .mem-wrapper > .wrapper > .slide1 {
+    opacity: 1;
+    animation-name: slide5;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+#slide2:checked ~ .mem-wrapper > .wrapper > .slide2 {
+    opacity: 1;
+    animation-name: slide;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+#slide3:checked ~ .mem-wrapper > .wrapper > .slide3 {
+    opacity: 1;
+    animation-name: slide2;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+#slide4:checked ~ .mem-wrapper > .wrapper > .slide4 {
+    opacity: 1;
+    animation-name: slide3;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+#slide5:checked ~ .mem-wrapper > .wrapper > .slide5 {
+    opacity: 1;
+    animation-name: slide4;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
