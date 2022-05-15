@@ -69,7 +69,7 @@ body {
     display: flex;
     justify-content: space-between;
     width: 60vw;
-    margin: 1vw auto;
+    margin: 1vw auto 0;
 }
 
 .txt-wrapper {
@@ -102,6 +102,7 @@ body {
     display: flex;
     justify-content: space-between;
     width: 18vw;
+    height: 3vw;
 }
 
 .buttons > label {
@@ -136,51 +137,6 @@ label:hover div {
     background: orange;
     border: 0.2vw rgb(0, 195, 255) solid;
 }
-
-/*@keyframes slide {
-    from {
-        margin-left: 0;
-    } 
-    to {
-        margin-left: -60vw;
-    }
-}
-
-@keyframes slide2 {
-    from {
-        margin-left: -60vw;
-    } 
-    to {
-        margin-left: -120vw;
-    }
-}
-
-@keyframes slide3 {
-    from {
-        margin-left: -120vw;
-    } 
-    to {
-        margin-left: -180vw;
-    }
-}
-
-@keyframes slide4 {
-    from {
-        margin-left: -180vw;
-    } 
-    to {
-        margin-left: -240vw;
-    }
-}
-
-@keyframes slide5 {
-    from {
-        margin-left: 60vw;
-    } 
-    to {
-        margin-left: 0;
-    }
-}*/
 
 #slide1:checked ~ .mem-wrapper > .wrapper > .slide1 {
     opacity: 1;
@@ -233,10 +189,11 @@ label:hover div {
 
 @media (max-width: 767px) {
     .buttons-container {
-        flex-direction: column;
+        flex-direction: column-reverse;
+        height: 7vw;
     }
     .buttons {
-        margin: auto;
+        margin: 0 auto;
     }
     .container {
         padding: 0;
