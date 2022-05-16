@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  background: rgb(20, 138, 241);
+  background: linear-gradient(to left, #2e2bfd, #4070f1, #34cfe4);
 }
 
 .container {
@@ -31,8 +31,10 @@ body {
     width: 60vw;
     height: 35vw;
     opacity: 0;
-    animation-duration: 0.5s;
     order: 1;
+    transition: transform ease-out 0.8s, opacity 0.8s, order 0.8s;
+    transform: scale(0);
+    border-radius: 2vw;
 }
 
 .slide1 {
@@ -90,12 +92,15 @@ body {
     opacity: 0;
     font-size: 2vw;
     text-align: start;
-    animation-duration: 0.5s;
     order: 1;
+    transform: translateX(60vw);
+    transition: transform ease-out 0.8s, opacity 0.8s, order 0.8s;
 }
 
 .container > input {
 	visibility: hidden;
+    width: 0;
+    height: 0;
 }
 
 .buttons {
@@ -130,61 +135,65 @@ body {
 #slide3:checked ~ .buttons-container .buttons label:nth-of-type(3) .label-button,
 #slide4:checked ~ .buttons-container .buttons label:nth-of-type(4) .label-button,
 #slide5:checked ~ .buttons-container .buttons label:nth-of-type(5) .label-button {
-	background: rgb(72, 21, 255);
+	background: rgb(70, 20, 255);
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3), 0 0px 5px #fff, 0 0 10px #38eeff, 0 0 50px #38eeff;
 }
 
 label:hover div {
     background: orange;
     border: 0.2vw rgb(0, 195, 255) solid;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3), 0 0px 5px #fff, 0 0 10px #38eeff, 0 0 50px #38eeff;
 }
 
 #slide1:checked ~ .mem-wrapper > .wrapper > .slide1 {
+    order: 0;
     opacity: 1;
-    animation-name: slide;
+    transform: scale(1);
 }
 #slide1:checked ~ .buttons-container > .txt-wrapper > .txt-container > .text1 {
+    order: 0;
     opacity: 1;
-    animation-name: txt;
+    transform: translateX(0vw);
 }
 #slide2:checked ~ .mem-wrapper > .wrapper > .slide2 {
     order: 0;
     opacity: 1;
-    animation-name: slide;
+    transform: scale(1);
 }
 #slide2:checked ~ .buttons-container > .txt-wrapper > .txt-container > .text2 {
     order: 0;
     opacity: 1;
-    animation-name: txt;
+    transform: translateX(0vw);
 }
 #slide3:checked ~ .mem-wrapper > .wrapper > .slide3 {
     order: 0;
     opacity: 1;
-    animation-name: slide;
+    transform: scale(1);
 }
 #slide3:checked ~ .buttons-container > .txt-wrapper > .txt-container > .text3 {
     order: 0;
     opacity: 1;
-    animation-name: txt;
+    transform: translateX(0vw);
 }
 #slide4:checked ~ .mem-wrapper > .wrapper > .slide4 {
     order: 0;
     opacity: 1;
-    animation-name: slide;
+    transform: scale(1);
 }
 #slide4:checked ~ .buttons-container > .txt-wrapper > .txt-container > .text4 {
     order: 0;
     opacity: 1;
-    animation-name: txt;
+    transform: translateX(0vw);
 }
 #slide5:checked ~ .mem-wrapper > .wrapper > .slide5 {
     order: 0;
     opacity: 1;
-    animation-name: slide;
+    transform: scale(1);
 }
 #slide5:checked ~ .buttons-container > .txt-wrapper > .txt-container > .text5 {
     order: 0;
     opacity: 1;
-    animation-name: txt;
+    transform: translateX(0vw);
 }
 
 @media (max-width: 767px) {
@@ -197,24 +206,5 @@ label:hover div {
     }
     .container {
         padding: 0;
-    }
-}
-
-@keyframes slide {
-    from {
-        opacity: 0;
-        transform: scale(2);
-    } 
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-@keyframes txt {
-    from {
-        transform: translateX(60vw);
-    } 
-    to {
-        transform: translateX(0vw);
     }
 }
