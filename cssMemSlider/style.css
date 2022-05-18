@@ -1,0 +1,212 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(to left, #2e2bfd, #4070f1, #34cfe4);
+}
+
+.container {
+    padding: 3vw 0 0 0;
+    width: 100%;
+    height: 100%;
+}
+
+.mem-wrapper {
+    margin: auto;
+    width: 60vw;
+    height: 35vw;
+    overflow: hidden;
+    border-radius: 2vw;
+}
+
+.wrapper {
+    display: flex;
+    width: 300vw;
+    height: 35vw;
+}
+
+.slide {
+    width: 60vw;
+    height: 35vw;
+    opacity: 0;
+    order: 1;
+    transition: transform ease-out 0.8s, opacity 0.8s, order 0.8s;
+    transform: scale(0);
+    border-radius: 2vw;
+}
+
+.slide1 {
+    background: center url(./assets/3.jpg);
+    background-size: 60vw 35vw;
+    background-repeat: no-repeat;
+}
+
+.slide2 {
+    background: center url(./assets/2.jpeg);
+    background-size: 60vw 35vw;
+    background-repeat: no-repeat;
+}
+
+.slide3 {
+    background: center url(./assets/4.jpeg);
+    background-size: 60vw 35vw;
+    background-repeat: no-repeat;
+}
+
+.slide4 {
+    background: center url(./assets/6.webp);
+    background-size: 60vw 35vw;
+    background-repeat: no-repeat;
+}
+
+.slide5 {
+    background: center url(./assets/5.png);
+    background-size: 60vw 35vw;
+    background-repeat: no-repeat;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    width: 60vw;
+    margin: 1vw auto 0;
+}
+
+.txt-wrapper {
+    width: 40vw;
+    height: 3vw;
+    overflow: hidden;
+}
+
+.txt-container {
+    display:flex;
+    width: 200vw;
+    height: 3vw;
+}
+
+.text {
+    width: 40vw;
+    height: 3vw;
+    opacity: 0;
+    font-size: 2vw;
+    text-align: start;
+    order: 1;
+    transform: translateX(60vw);
+    transition: transform ease-out 0.8s, opacity 0.8s, order 0.8s;
+}
+
+.container > input {
+	visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 18vw;
+    height: 3vw;
+}
+
+.buttons > label {
+    height: 3vw;
+    width: 3vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.label-button {
+    height: 1.5vw;
+    width: 1.5vw;
+    cursor: pointer;
+    border-radius: 50%;
+    background: rgb(0, 195, 255);
+    transition: background ease-in-out .3s;
+    border: 0.2vw orange solid;
+}
+ 
+#slide1:checked ~ .buttons-container .buttons label:nth-of-type(1) .label-button,
+#slide2:checked ~ .buttons-container .buttons label:nth-of-type(2) .label-button,
+#slide3:checked ~ .buttons-container .buttons label:nth-of-type(3) .label-button,
+#slide4:checked ~ .buttons-container .buttons label:nth-of-type(4) .label-button,
+#slide5:checked ~ .buttons-container .buttons label:nth-of-type(5) .label-button {
+	background: rgb(70, 20, 255);
+}
+
+label:hover div {
+    background: orange;
+    border: 0.2vw rgb(0, 195, 255) solid;
+}
+
+label:active div {
+    transform: scale(0.9);
+}
+
+#slide1:checked ~ .mem-wrapper > .wrapper > .slide1 {
+    order: 0;
+    opacity: 1;
+    transform: scale(1);
+}
+#slide1:checked ~ .buttons-container > .txt-wrapper > .txt-container > .text1 {
+    order: 0;
+    opacity: 1;
+    transform: translateX(0vw);
+}
+#slide2:checked ~ .mem-wrapper > .wrapper > .slide2 {
+    order: 0;
+    opacity: 1;
+    transform: scale(1);
+}
+#slide2:checked ~ .buttons-container > .txt-wrapper > .txt-container > .text2 {
+    order: 0;
+    opacity: 1;
+    transform: translateX(0vw);
+}
+#slide3:checked ~ .mem-wrapper > .wrapper > .slide3 {
+    order: 0;
+    opacity: 1;
+    transform: scale(1);
+}
+#slide3:checked ~ .buttons-container > .txt-wrapper > .txt-container > .text3 {
+    order: 0;
+    opacity: 1;
+    transform: translateX(0vw);
+}
+#slide4:checked ~ .mem-wrapper > .wrapper > .slide4 {
+    order: 0;
+    opacity: 1;
+    transform: scale(1);
+}
+#slide4:checked ~ .buttons-container > .txt-wrapper > .txt-container > .text4 {
+    order: 0;
+    opacity: 1;
+    transform: translateX(0vw);
+}
+#slide5:checked ~ .mem-wrapper > .wrapper > .slide5 {
+    order: 0;
+    opacity: 1;
+    transform: scale(1);
+}
+#slide5:checked ~ .buttons-container > .txt-wrapper > .txt-container > .text5 {
+    order: 0;
+    opacity: 1;
+    transform: translateX(0vw);
+}
+
+@media (max-width: 767px) {
+    .buttons-container {
+        flex-direction: column-reverse;
+        height: 7vw;
+    }
+    .buttons {
+        margin: 0 auto;
+    }
+    .container {
+        padding: 0;
+    }
+}
