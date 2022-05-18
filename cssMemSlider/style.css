@@ -143,6 +143,10 @@ label:hover div {
     border: 0.2vw rgb(0, 195, 255) solid;
 }
 
+label:active div {
+    transform: scale(0.9);
+}
+
 #slide1:checked ~ .mem-wrapper > .wrapper > .slide1 {
     order: 0;
     opacity: 1;
